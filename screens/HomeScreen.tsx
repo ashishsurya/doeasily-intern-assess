@@ -2,6 +2,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components/native";
 import { UserCard } from "../components/user-card";
 import { StockCards } from "../components/stock-cards";
+import { FAB } from "../components/floating-action-button";
 
 export const HomeScreen = () => {
 	return (
@@ -9,6 +10,7 @@ export const HomeScreen = () => {
 			<HomeScreenWrapper>
 				<UserCard username="Surya Ashish" />
 				<StockCards />
+				<FAB />
 			</HomeScreenWrapper>
 		</LinearGradient>
 	);
@@ -16,4 +18,6 @@ export const HomeScreen = () => {
 
 const HomeScreenWrapper = styled.View`
 flex: 1;
+position: relative;
+background-color: transparent;
 `;

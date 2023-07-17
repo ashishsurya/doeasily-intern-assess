@@ -2,26 +2,28 @@ import { Entypo } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, Text, View } from "react-native";
 import styled from "styled-components/native";
 import { HomeScreen } from "./screens/HomeScreen";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { Fragment } from "react";
+import { FAB } from "./components/floating-action-button";
+import { LinearGradient } from "expo-linear-gradient";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<SafeAreaView style={{ flex: 1, position: "relative" }}>
 			<NavigationContainer>
-				<StatusBar style="auto" />
-
+				<StatusBar />
 				<Tab.Navigator
 					initialRouteName="home"
 					screenOptions={{
 						tabBarStyle: {
 							height: 70,
+							backgroundColor: "trasnparent",
 						},
 					}}
 				>

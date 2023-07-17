@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 export const StockCards = () => {
 	const [stocks, setStocks] = useState<StockCardProps[]>([]);
 
+	const [loading, setLoading] = useState(false);
+
 	const API_URL = "https://mocki.io/v1/cf4c9d6c-6654-4177-80f4-ff3494115111";
 	const exampleStockCard = {
 		title: "total",
@@ -18,9 +20,17 @@ export const StockCards = () => {
 
 	useEffect(() => {
 		(async () => {
+			setLoading(true);
 			const response = await fetch(API_URL);
 			const json = await response.json();
 			setStocks(json as StockCardProps[]);
+			await new Promise<void>((res, rej) => {
+				setTimeout(() => {
+					res();
+				}, 1000);
+			});
+
+			setLoading(false);
 		})();
 	}, []);
 
@@ -29,9 +39,14 @@ export const StockCards = () => {
 			<SearchBar />
 			<Filters />
 			<ScrollView>
-				{stocks.map((stock) => (
-					<StockCard key={stock.title} {...stock} />
-				))}
+				{loading && <Text>Loading ....</Text>}
+				{!loading && (
+					<>
+						{stocks.map((stock) => (
+							<StockCard key={stock.title} {...stock} />
+						))}
+					</>
+				)}
 			</ScrollView>
 		</StyledStockCardsWrapper>
 	);
