@@ -1,0 +1,38 @@
+[
+  {
+    "title": "total",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  },
+  {
+    "title": "stock",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  },
+  {
+    "title": "karigar",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  },
+  {
+    "title": "suplier",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  },
+  {
+    "title": "bullion",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  },
+  {
+    "title": "customer",
+    "silver": -14500.0,
+    "gold": 133.5,
+    "amount": 676000
+  }
+]
